@@ -4,27 +4,27 @@
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <br><br><br><br>
     <form>
-      <span class="login" id="logintxt">系统登录</span>
+      <span class="login" id="logintxt">登録</span>
       <br><br>
-      <span class="txt">账号：</span>
+      <span class="txt">ユーザー名前：</span>
       <input class="text" type="text" v-model="username" ref="usernameinput">
       <br>
       <span class="error" id="usernameerror" ref="usernameerrorinput">{{usernameerror}}</span>
       <br><br>
-      <span class="txt">密码：</span>
-      <input class="text" type="password" v-model="password" ref="passwordinput">
+      <span class="txt">パスワード：</span>
+      <input class="text" type="password" v-model="password" ref="passwordinput" id="passwordinput">
       <br>
       <span class="error" id="passworderror" ref="passworderrorinput">{{passworderror}}</span>
       <br><br>
       <div class="admindiv">
-        <input type="radio" name="permission" class="admin" value="系统管理员" v-model="admin">系统管理员
+        <input type="radio" name="permission" class="admin" value="系统管理员" v-model="admin" ref="radio">管理者
       </div>
       <div class="admindiv">
-        <input type="radio" name="permission" class="admin" value="宿舍管理员" v-model="admin">宿舍管理员
+        <input type="radio" name="permission" class="admin" value="宿舍管理员" v-model="admin">一般ユーザー
       </div>
       <br><br>
-      <button class="login" type="button" @click="loginButton" ref="button1" id="button1">登录</button>
-      <button class="login" type="button" @click="resetButton" ref="button2" id="button2">重置</button>
+      <button class="login" type="button" @click="loginButton" ref="button1" id="button1">登録</button>
+      <button class="login" type="button" @click="resetButton" ref="button2" id="button2">リセット</button>
     </form>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
@@ -42,9 +42,11 @@ export default {
   },
   created() {
     this.$nextTick(()=>{
-      console.log(this.$refs.usernameinput.getBoundingClientRect().left)
-      console.log(this.$refs.button1.getBoundingClientRect().left)
-      console.log(this.$refs.button2.getBoundingClientRect().left)
+      // console.log(this.$refs.usernameinput.getBoundingClientRect().left)
+      // console.log(this.$refs.passwordinput.getBoundingClientRect().left)
+      // console.log(this.$refs.radio.getBoundingClientRect().left)
+      // console.log(this.$refs.button1.getBoundingClientRect().left)
+      // console.log(this.$refs.button2.getBoundingClientRect().left)
       // this.$refs.button1.style.left = this.$refs.usernameinput.getBoundingClientRect().left+'px'
     })
   },
@@ -81,7 +83,7 @@ export default {
       }
       loginsystem(this.username,this.password,this.admin).then(res =>{
         let relate = res.data[0]
-        console.log(relate)
+        // console.log(relate)
         if(relate == null){
           alert('账号或者密码错误！')
         }else {
@@ -167,7 +169,16 @@ input{
   /*取消选中时的黑边框*/
   outline: none;
 }
-button{
+#button1{
+  width: 80px;
+  background: #2e82ff;
+  color: #ffffff;
+  font-size: 13px;
+  border-radius: 2px;
+  border: none;
+  position: absolute;
+}
+#button2{
   width: 80px;
   background: #2e82ff;
   color: #ffffff;
@@ -184,7 +195,7 @@ button{
   width: 120px;
   display: inline-block;
   position: relative;
-  left: 28px;
+  left: 46px;
 }
 .error {
   color: red;
@@ -197,16 +208,21 @@ button{
 }
 #button1{
   position: relative;
-  left: 4px;
+  left: 36px;
 }
 #button2{
   position: relative;
-  left: 40px;
+  left: 76px;
+}
+#passwordinput{
+  position: relative;
+  left: 8px;
 }
 form{
   opacity: 0.95;
   background-color: #ffffff;
-  width: 300px;
+  width: 400px;
+  height: 280px;
   display: inline-block;
 }
 </style>

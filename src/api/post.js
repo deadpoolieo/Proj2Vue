@@ -8,3 +8,13 @@ export function loginsystem(username,password,admin){
         headers:{'Content-Type':'application/json'}
     })
 }
+
+//查询申请情报
+export function queryapplierinfo(){
+    return service.post('/queryapplierinfo')
+}
+
+//查询通知
+export function querynoticeinfo(){
+    return service.post('/querynoticeinfo')
+}

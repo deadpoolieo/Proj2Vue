@@ -23,6 +23,21 @@ const routes = [
     path: '/applier',
     name: 'applier',
     component: ()=> import('../views/Applier')
+  },
+  {
+    path: '/applieritem',
+    name: 'applieritem',
+    component: ()=> import('../views/ApplierItem')
+  },
+  {
+    path: '/noticedetails',
+    name: 'noticedetails',
+    component: ()=> import('../views/NoticeDetails')
+  },
+  {
+    path: '/newapply',
+    name: 'newapply',
+    component: ()=> import('../views/NewApply')
   }
 ]
 
