@@ -1,10 +1,10 @@
 <template>
   <div :style="background" class="applier">
-    <span class="maintitle1">企業経営革新ー申請一覧</span>
+    <span class="maintitle1,classspan">企業経営革新ー申請一覧</span>
     <br><br>
-    <span class="maintitle2">申請情報</span>
+    <span class="maintitle2,classspan">申請情報</span>
     <br>
-    <table>
+    <table class="table1">
       <thead>
         <tr>
           <th>id</th>
@@ -29,7 +29,7 @@
     </table>
     <button class="button1" @click="$router.push({path:'/newapply'})">新規</button>
     <br>
-    <span>共{{applierinfo.length}}条</span>
+    <span class="classspan">共{{applierinfo.length}}条</span>
     <select v-model="row" v-bind:value="row">
       <option value="10">10条/页</option>
       <option value="5">5条/页</option>
@@ -42,15 +42,15 @@
     <button class="page" @click="this.page=pagenum[3]">{{pagenum[3]}}</button>
     <button class="page" @click="this.page=pagenum[4]">{{pagenum[4]}}</button>
     <button class="page" @click="nextpage">&#62;</button>
-    <span>前往</span>
+    <span class="classspan">前往</span>
     <input ref="pageinput" class="topage" type="text" v-model="page">
-    <span>页</span>
-    <span class="error" ref="pageerrorinput">{{pageerror}}</span>
+    <span class="classspan">页</span>
+    <span class="error,classspan" ref="pageerrorinput">{{pageerror}}</span>
     <br><br>
-    <span class="maintitle2">お知らせ</span>
+    <span class="maintitle2,classspan">お知らせ</span>
     <br>
     <button class="button1" @click.once="changenoticeshow">お知らせ一覧</button>
-    <table>
+    <table class="table1">
       <thead>
       <tr>
         <th>id</th>
@@ -62,6 +62,7 @@
       <tr v-show="sevendaynoticeshow" v-for="(n,index) in sevendaynoticeinfo.length" :key="index">
         <td>{{index+1}}</td>
         <td>{{sevendaynoticeinfo[index].ntcdate}}</td>
+        <!--新闻超过15字将被省略15字以外内容-->
         <td class="title" v-if="sevendaynoticeinfo[index].ntctitle.length<=15"><router-link to="/noticedetails" @mouseenter="selectedinfo=sevendaynoticeinfo[index]" @click="sevendaynoticedetails">{{sevendaynoticeinfo[index].ntctitle}}</router-link></td>
         <td class="title" v-else><router-link to="/noticedetails" @mouseenter="selectedinfo=sevendaynoticeinfo[index];$event.currentTarget.innerHTML=sevendaynoticeinfo[index].ntctitle;" @mouseleave="$event.currentTarget.innerHTML=sevendaynoticeinfo[index].ntctitle.slice(0,15)+'...'" @click="sevendaynoticedetails">{{sevendaynoticeinfo[index].ntctitle.slice(0,15)+'...'}}</router-link></td>
       </tr>
@@ -223,12 +224,12 @@ import {queryapplierinfo, querynoticeinfo} from "@/api/post";
 
 </script>
 <style>
-table{
+.table1{
   margin: auto;
   opacity: 0.9;
   background-color: #ffffff;
 }
-span{
+.classspan{
   opacity: 0.9;
   background-color: #ffffff;
 }

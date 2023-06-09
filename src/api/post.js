@@ -18,3 +18,9 @@ export function queryapplierinfo(){
 export function querynoticeinfo(){
     return service.post('/querynoticeinfo')
 }
+//保存申请
+export function addapplication(obj){
+    return service.post('/addapplication',JSON.stringify(obj),{
+        headers:{'Content-Type':'application/json'}
+    })
+}

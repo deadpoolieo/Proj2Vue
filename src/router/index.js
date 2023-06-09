@@ -38,6 +38,16 @@ const routes = [
     path: '/newapply',
     name: 'newapply',
     component: ()=> import('../views/NewApply')
+  },
+  {
+    path: '/applicationconfirm',
+    name: 'applicationconfirm',
+    component: ()=> import('../views/ApplicationConfirm')
+  },
+  {
+    path: '/othertable134',
+    name: 'othertable134',
+    component: ()=> import('../views/Othertable134')
   }
 ]
 
