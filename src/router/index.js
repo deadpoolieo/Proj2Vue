@@ -48,6 +48,16 @@ const routes = [
     path: '/othertable134',
     name: 'othertable134',
     component: ()=> import('../views/Othertable134')
+  },
+  {
+    path: '/othertableconfirm',
+    name: 'othertableconfirm',
+    component: ()=> import('../views/OthertableConfirm')
+  },
+  {
+    path: '/businessplan',
+    name: 'businessplan',
+    component: ()=> import('../views/BusinessPlan')
   }
 ]
 

@@ -174,6 +174,26 @@ export default {
       addapplication(obj).then(res=>{
         if (res.data=='保存に成功しました'){
           alert('保存に成功しました')
+          // localStorage.setItem('Now','')
+          // localStorage.setItem('aPLShinseisyaName','')
+          // localStorage.setItem('aPLAddressYubinNo3','')
+          // localStorage.setItem('aPLAddressYubinNo4','')
+          // localStorage.setItem('aPLAddressTodofuken','')
+          // localStorage.setItem('aPLAddressShikuchoson','')
+          // localStorage.setItem('aPLAddressBanchi','')
+          // localStorage.setItem('aPLAddressTodofukenKana','')
+          // localStorage.setItem('aPLAddressShikuchosonKana','')
+          // localStorage.setItem('aPLAddressBanchiKana','')
+          // localStorage.setItem('aPLAddressManshon','')
+          // localStorage.setItem('aPLDaihyoshaYakushoku','')
+          // localStorage.setItem('aPLDaihyoshaName','')
+          // localStorage.setItem('aPLHojinNo','')
+          // localStorage.setItem('aPLTantoshaName','')
+          // localStorage.setItem('region','')
+          // localStorage.setItem('aPLCSTEL','')
+          // localStorage.setItem('aPLCSFAX','')
+          // localStorage.setItem('aPLCSTantoshaMail','')
+          // localStorage.setItem('aPLCSKakuninyoMail','')
           this.$router.push({
             path:'/othertable134'
           })

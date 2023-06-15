@@ -24,3 +24,14 @@ export function addapplication(obj){
         headers:{'Content-Type':'application/json'}
     })
 }
+//保存计划
+export function addimplementationplan(obj){
+    return service.post('/addimplementationplan',JSON.stringify(obj),{
+        headers:{'Content-Type':'application/json'}
+    })
+}
+export function addinvestmentplan(obj){
+    return service.post('/addinvestmentplan',JSON.stringify(obj),{
+        headers:{'Content-Type':'application/json'}
+    })
+}
